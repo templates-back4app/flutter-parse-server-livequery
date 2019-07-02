@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
       liveQueryUrl: keyLiveQuery,
       clientKey: keyParseClientKey,
       debug: true,      
-      autoSendSessionId: true);
+      autoSendSessionId: false);
 
     final ParseResponse response = await Parse().healthCheck();
 
@@ -134,8 +134,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> filterItem(counter) async{
-
-    print('aqui');
       QueryBuilder<ParseObject> queryCars =
         QueryBuilder<ParseObject>(ParseObject('Likes'))
         ..whereEqualTo('userId', '6xbDYRJF0l');
